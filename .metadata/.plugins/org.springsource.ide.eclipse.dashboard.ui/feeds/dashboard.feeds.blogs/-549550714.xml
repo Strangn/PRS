@@ -5,16 +5,37 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2018-09-27T15:00:16Z</updated>
+  <updated>2018-10-02T09:10:28Z</updated>
+  <entry>
+    <title>Spring Vault 2.1 GA released</title>
+    <link rel="alternate" href="https://spring.io/blog/2018/10/02/spring-vault-2-1-ga-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Paluch</name>
+    </author>
+    <id>tag:spring.io,2018-10-02:3419</id>
+    <updated>2018-10-02T09:10:28Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the community, I&amp;rsquo;d like to announce the general availability of Spring Vault 2.1. Spring Vault 2.1 requires JDK 8 or higher and specifically supports JDK 11 as the next long-term support release. The most notable changes of Spring Vault 2.1 are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Extending infrastructure-based authentication to support Google Cloud IAM and Azure Managed Service Identity.&lt;/li&gt;
+  &lt;li&gt;Integrating Vault’s versioned Key-Value backend.&lt;/li&gt;
+  &lt;li&gt;Wrapping API support.&lt;/li&gt;
+  &lt;li&gt;Java 11 compatibility.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This release is compatible with Vault versions from &lt;code&gt;0.5.2&lt;/code&gt; up to &lt;code&gt;0.11.1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Make sure to also check out our &lt;a href="https://spring.io/blog/2018/09/24/hands-on-with-spring-vault-2-1"&gt;blog post that explains the new features in detail&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For a complete list of changes see the &lt;a href="http://docs.spring.io/spring-vault/docs/2.1.0.RELEASE/changelog.txt"&gt;changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-vault/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.1.0.RELEASE/reference/html/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://github.com/mp911de/spring-cloud-vault-config-samples/"&gt;Examples&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-vault"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>What's new in Spring Data Lovelace?</title>
     <link rel="alternate" href="https://spring.io/blog/2018/09/27/what-s-new-in-spring-data-lovelace" />
-    <category term="releases" label="Releases" />
+    <category term="engineering" label="Engineering" />
     <author>
       <name>Oliver Gierke</name>
     </author>
     <id>tag:spring.io,2018-09-18:3398</id>
-    <updated>2018-09-27T15:00:16Z</updated>
+    <updated>2018-09-27T15:00:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
 &lt;p&gt;With Spring Data Lovelace just released in its generally available version last week, it is time to have a brief walk through the new features we have added.
 The release train is pretty packed with features.
@@ -24,7 +45,7 @@ Advanced, store-specific news is covered in the following blog posts:&lt;/p&gt;
 &lt;div class="ulist"&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="https://spring.io/blog/2018/09/24/spring-data-jdbc-references-and-aggregates"&gt;Jens Schauder introducing Spring Data JDBC&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/blog/2018/09/17/introducing-spring-data-jdbc"&gt;Jens Schauder introducing Spring Data JDBC&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href="https://spring.io/blog/2018/09/24/spring-data-jdbc-references-and-aggregates"&gt;Jens again on how to model aggregates with Spring Data JDBC&lt;/a&gt;&lt;/p&gt;
@@ -663,7 +684,6 @@ public class ConsumerApplication implements ApplicationListener&amp;lt;Applicati
 &lt;p&gt;This blog post explains the new and noteworthy in &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Lovelace"&gt;Spring Data Lovelace&lt;/a&gt; for &lt;a href="https://spring.io/blog/2018/09/26/what-s-new-in-spring-data-lovelace-for-redis-and-apache-cassandra#cassandra"&gt;Apache Cassandra&lt;/a&gt; and &lt;a href="https://spring.io/blog/2018/09/26/what-s-new-in-spring-data-lovelace-for-redis-and-apache-cassandra#redis"&gt;Redis&lt;/a&gt;.
 Make sure to also check out the blog post on &lt;a href="https://spring.io/blog/2018/09/27/what-s-new-in-spring-data-lovelace-for-mongodb"&gt;What&amp;#8217;s new in Spring Data Lovelace for MongoDB?&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;h1 id="introduction" class="sect0"&gt;&lt;a class="anchor" href="#introduction"&gt;&lt;/a&gt;Introduction&lt;/h1&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;With Spring Data Lovelace just released in its generally available version last week, it&amp;#8217;s time to have a brief walk through the new feature&amp;#8217;s we have added.
 The release train is pretty packed with features.&lt;/p&gt;
@@ -856,7 +876,8 @@ class Dependance {
 
 operations.getTableName(Person::class)
 
-operations.find&amp;lt;Person&amp;gt;().as&amp;lt;Contact&amp;gt;.matching(query(where("firstname").isEqualTo("luke"))).all();&lt;/code&gt;&lt;/pre&gt;
+operations.find&amp;lt;Person&amp;gt;().as&amp;lt;Contact&amp;gt;
+  .matching(query(where("firstname").isEqualTo("luke"))).all();&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
@@ -948,13 +969,13 @@ long count = select.count();&lt;/code&gt;&lt;/pre&gt;
 &lt;div class="listingblock"&gt;
 &lt;div class="content"&gt;
 &lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;LettuceClientConfiguration clientConfiguration = LettuceClientConfiguration.builder()
-                          .readFrom(ReadFrom.NEAREST)
-                          .build();
+  .readFrom(ReadFrom.NEAREST)
+  .build();
 
 RedisSentinelConfiguration endpoint = new RedisSentinelConfiguration()
-                          .master("my-master")
-                          .sentinel("sentinel-host1", 26379)
-                          .sentinel("sentinel-host2", 26379);
+  .master("my-master")
+  .sentinel("sentinel-host1", 26379)
+  .sentinel("sentinel-host2", 26379);
 
 LettuceConnectionFactory factory = new LettuceConnectionFactory(endpoint, clientConfiguration);&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -970,8 +991,8 @@ LettuceConnectionFactory factory = new LettuceConnectionFactory(endpoint, client
 &lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;LettuceClientConfiguration clientConfiguration = LettuceClientConfiguration.builder().readFrom(ReadFrom.NEAREST).build();
 
 RedisStaticMasterSlaveConfiguration endpoint = new RedisStaticMasterSlaveConfiguration("my-master-host", 6379)
-                          .node("my-replica-host1", 6379)
-                          .node("my-replica-host2", 6379);
+  .node("my-replica-host1", 6379)
+  .node("my-replica-host2", 6379);
 
 LettuceConnectionFactory factory = new LettuceConnectionFactory(endpoint, clientConfiguration);&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -1027,7 +1048,8 @@ LettuceConnectionFactory factory = new LettuceConnectionFactory(clusterConfigura
 &lt;/div&gt;
 &lt;div class="listingblock"&gt;
 &lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;Cursor&amp;lt;byte[]&amp;gt; scan = clusterConnection.keyCommands().scan(ScanOptions.scanOptions().match("foo*").build());
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;Cursor&amp;lt;byte[]&amp;gt; scan = clusterConnection.keyCommands()
+  .scan(ScanOptions.scanOptions().match("foo*").build());
 scan.forEachRemaining(key -&amp;gt; …);&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1182,7 +1204,7 @@ class Person {
       <name>Dave Syer</name>
     </author>
     <id>tag:spring.io,2018-09-25:3416</id>
-    <updated>2018-09-25T15:33:40Z</updated>
+    <updated>2018-09-25T15:33:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-function"&gt;Spring Cloud
 Function&lt;/a&gt; has had support for Microsoft
@@ -1194,9 +1216,7 @@ background behind the shift. We in the Spring team had a lot of fun
 working on this and collaborating with the folks at Microsoft to get
 the best blend of the two technologies for our users.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="azure-functions-for-java"&gt;&lt;a class="anchor" href="#azure-functions-for-java"&gt;&lt;/a&gt;Azure Functions for Java&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
+&lt;h1 id="azure-functions-for-java" class="sect0"&gt;&lt;a class="anchor" href="#azure-functions-for-java"&gt;&lt;/a&gt;Azure Functions for Java&lt;/h1&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;Microsoft has had Java support in Azure Functions for a while, and it
 enables developers to easily write and deploy Java code that connects
@@ -1362,11 +1382,7 @@ sample. They are all important but basically boilerplate - you should
 be able to copy them and re-use the same configuration in all Azure
 Function Applications.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="spring-cloud-function"&gt;&lt;a class="anchor" href="#spring-cloud-function"&gt;&lt;/a&gt;Spring Cloud Function&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
+&lt;h1 id="spring-cloud-function" class="sect0"&gt;&lt;a class="anchor" href="#spring-cloud-function"&gt;&lt;/a&gt;Spring Cloud Function&lt;/h1&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;Spring Cloud Function aims to support similar serverless use cases
 when the application developer declares Spring beans of type
@@ -1498,8 +1514,6 @@ If you are at &lt;a href="https://springoneplatform.io"&gt;Spring One Platform&l
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;</content>
   </entry>
   <entry>
@@ -2722,25 +2736,5 @@ Book_Author (
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>Announcing Spring Cloud Function - 2.0.0.M2</title>
-    <link rel="alternate" href="https://spring.io/blog/2018/09/19/announcing-spring-cloud-function-2-0-0-m2" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Oleg Zhurakousky</name>
-    </author>
-    <id>tag:spring.io,2018-09-19:3401</id>
-    <updated>2018-09-19T13:40:00Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce the second Milestone of the Spring Cloud Function - 2.0.0.M2.&lt;/p&gt;
-&lt;p&gt;Individual modules of Spring Cloud Function 2.0.0.M2 are available for use in the &lt;a href="http://repo.spring.io/libs-milestone-local/org/springframework/cloud/"&gt;Spring Milestone&lt;/a&gt; repository. &lt;/p&gt;
-&lt;p&gt;Aside form general enhancements and bug fixes, the primary themes for this release are&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2018/09/11/kotlin-support-in-spring-cloud-function"&gt;Kotlin support&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;new programming model for Azure Functions (blog to follow)&lt;/li&gt;
-  &lt;li&gt;automatic (optional) export of &lt;code&gt;Supplier&lt;/code&gt; on startup in web adapter&lt;/li&gt;
-&lt;/ul&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-cloud/spring-cloud-function/labels/ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-cloud-function"&gt;&lt;code&gt;spring-cloud-function&lt;/code&gt; tag&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://cloud.spring.io/spring-cloud-function/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-function"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-function/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://cloud.spring.io/spring-cloud-static/spring-cloud-function/2.0.0.M2/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
 </feed>
