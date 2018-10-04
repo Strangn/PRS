@@ -36,6 +36,20 @@ public class Vendor {
 	}
 
 
+	public Vendor(String code, String name, String address, String city, String state, String zip, String email,
+			boolean isPreApproved) {
+		super();
+		this.code = code;
+		this.name = name;
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.email = email;
+		this.isPreApproved = isPreApproved;
+	}
+
+
 	public Vendor() {
 		super();
 	}
@@ -130,14 +144,27 @@ public class Vendor {
 		this.isPreApproved = isPreApproved;
 	}
 
+	
+	public Object getVendor() {
+		// added for test
+		return null;
+	}
+	
+	public void setVendor(String string) {
+		// added for test
+		
+	}
+	
+	
+	
 
 	@Override
 	public String toString() {
 		return "Vendor [id=" + id + ", code=" + code + ", name=" + name + ", address=" + address + ", city=" + city
 				+ ", state=" + state + ", zip=" + zip + ", email=" + email + ", isPreApproved=" + isPreApproved + "]";
 	}
-	
-	
+
+
 	
 	
 }

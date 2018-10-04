@@ -612,3 +612,183 @@
 2018-10-02 12:36:32,796 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2018-10-02 12:36:32,799 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-10-02 12:36:32,799 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 14:12:27,478 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:12:27,478 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:12:27,479 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:12:27,481 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:12:27,486 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 14:13:47,767 [Worker-19: Building Workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:13:47,774 [Worker-19: Building Workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:13:47,780 [Worker-19: Building Workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:13:47,787 [Worker-19: Building Workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:13:47,788 [Worker-19: Building Workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 14:13:56,945 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:13:56,945 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:13:56,951 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:13:56,960 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:13:56,966 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 14:21:00,113 [Worker-30: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:21:00,117 [Worker-30: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:21:00,123 [Worker-30: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:21:00,131 [Worker-30: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:21:00,131 [Worker-30: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 14:35:22,237 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:35:22,237 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:35:22,237 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:35:22,240 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:35:22,246 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 14:38:06,135 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:38:06,144 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-02 14:38:06,175 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:38:06,184 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:38:06,184 [Worker-47: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 14:40:16,151 [Worker-49: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:40:16,152 [Worker-49: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:40:16,158 [Worker-49: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:40:16,166 [Worker-49: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:40:16,173 [Worker-49: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 14:40:37,627 [Worker-54: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:40:37,633 [Worker-54: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:40:37,639 [Worker-54: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:40:37,647 [Worker-54: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:40:37,647 [Worker-54: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 14:47:17,010 [Worker-59: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:47:17,010 [Worker-59: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:47:17,010 [Worker-59: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:47:17,013 [Worker-59: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:47:17,013 [Worker-59: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 14:47:43,843 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:47:43,844 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:47:43,844 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:47:43,856 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:47:43,856 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 14:48:28,244 [Worker-61: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:48:28,246 [Worker-61: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:48:28,251 [Worker-61: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:48:28,257 [Worker-61: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:48:28,262 [Worker-61: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 14:49:47,316 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:49:47,324 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:49:47,333 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 14:49:47,347 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 14:49:47,348 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 15:00:16,369 [Worker-65: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:00:16,370 [Worker-65: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:00:16,371 [Worker-65: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:00:16,373 [Worker-65: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:00:16,378 [Worker-65: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 15:25:08,369 [Worker-72: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:25:08,374 [Worker-72: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:25:08,379 [Worker-72: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:25:08,386 [Worker-72: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:25:08,386 [Worker-72: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 15:30:15,677 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:30:15,679 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-02 15:30:15,689 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:30:15,697 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:30:15,704 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 15:33:13,503 [Worker-72: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:33:13,509 [Worker-72: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:33:13,514 [Worker-72: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:33:13,523 [Worker-72: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:33:13,523 [Worker-72: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 15:33:47,862 [Worker-75: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:33:47,862 [Worker-75: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:33:47,863 [Worker-75: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:33:47,865 [Worker-75: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:33:47,865 [Worker-75: Launching PrsUserTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 15:35:16,865 [Worker-72: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:35:16,866 [Worker-72: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:35:16,866 [Worker-72: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:35:16,877 [Worker-72: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:35:16,878 [Worker-72: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 15:40:23,458 [Worker-78: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:40:23,459 [Worker-78: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:40:23,465 [Worker-78: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:40:23,475 [Worker-78: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:40:23,481 [Worker-78: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 15:42:26,554 [Worker-79: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:42:26,561 [Worker-79: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-02 15:42:26,576 [Worker-79: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:42:26,588 [Worker-79: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:42:26,588 [Worker-79: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 15:44:20,337 [Worker-80: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:44:20,337 [Worker-80: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:44:20,337 [Worker-80: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:44:20,340 [Worker-80: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:44:20,347 [Worker-80: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-02 15:48:08,767 [Worker-80: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:48:08,774 [Worker-80: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:48:08,781 [Worker-80: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-02 15:48:08,792 [Worker-80: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-02 15:48:08,792 [Worker-80: Launching PrsVendorTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-03 15:09:27,036 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-03 15:09:27,042 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-03 15:09:27,056 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-03 15:09:27,058 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-03 15:09:27,058 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-03 15:51:39,992 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-03 15:51:39,994 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-03 15:51:39,994 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-03 15:51:39,996 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-03 15:51:39,996 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-04 09:15:46,211 [Worker-40: Launching PrsWebApplicationTests] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 09:15:46,214 [Worker-40: Launching PrsWebApplicationTests] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-04 09:15:46,219 [Worker-40: Launching PrsWebApplicationTests] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 09:15:46,222 [Worker-40: Launching PrsWebApplicationTests] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 09:15:46,222 [Worker-40: Launching PrsWebApplicationTests] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-04 11:10:53,031 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 11:10:53,038 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 11:10:53,038 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 11:10:53,046 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 11:10:53,047 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-04 14:01:37,354 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:01:37,355 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-04 14:01:37,359 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 14:01:37,361 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:01:37,365 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-04 14:01:56,669 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:01:56,674 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-04 14:01:56,679 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 14:01:56,684 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:01:56,684 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-04 14:06:58,871 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:06:58,872 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-04 14:06:58,879 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 14:06:58,884 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:06:58,888 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-04 14:07:02,234 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:07:02,238 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-04 14:07:02,244 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 14:07:02,250 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:07:02,250 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-04 14:08:14,754 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:08:14,755 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-04 14:08:14,757 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 14:08:14,760 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:08:14,760 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-04 14:08:36,910 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:08:36,910 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 14:08:36,911 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 14:08:36,916 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:08:36,916 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-04 14:08:42,010 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:08:42,011 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-04 14:08:42,017 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 14:08:42,023 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:08:42,027 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-04 14:25:23,466 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:25:23,472 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-04 14:25:23,478 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 14:25:23,484 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:25:23,484 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-04 14:25:41,002 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:25:41,002 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-04 14:25:41,005 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 14:25:41,007 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:25:41,010 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
+2018-10-04 14:25:51,052 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:25:51,056 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-04 14:25:51,062 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-04 14:25:51,067 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-04 14:25:51,067 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Repos\PRSWeb\PRSWeb\src\test\resources
