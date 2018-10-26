@@ -1,4 +1,4 @@
-/*package com.prs.business.purchaserequestlineitem;
+package com.prs.business.purchaserequestlineitem;
 
 public class PurchaseRequestLineItem {
 	private int id;
@@ -63,4 +63,4 @@ public class PurchaseRequestLineItem {
 	}
 	
 	
-}*/
+}

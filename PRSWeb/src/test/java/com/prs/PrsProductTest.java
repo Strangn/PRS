@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.Optional;
 
-import org.aspectj.apache.bcel.util.Repository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,24 +22,27 @@ public class PrsProductTest extends PrsWebApplicationTests  {
 	@Autowired
 	private ProductRepository productRepository;
 	
+	@Autowired
+	private VendorRepository vendorRepository;
+	
 	@Test
 	public void testProductCrudFunctions()  {
-		//get all vendors
+		//get all products
 		Iterable<Product> products = productRepository.findAll();
 		assertNotNull(products);
 		
-		//add a user
-		Product p1 = new Product("vendor", "partNumber", "name", "price", "unit", "photoPath", true, true);
+		//add a product
+		Optional <Vendor> v = vendorRepository.findById(3);
+		Product p1 = new Product(v.get(), "partNumber", "name", 100.00, "unit", "photoPath");
 		assertNotNull(productRepository.save(p1));
 		int id = p1.getId();
 
-		//get user and validate productname is correct
-		Optional<Product> v2 = productName
-				Repository.findById(id);
-		assertEquals(v2.get().getProduct(),"ProductName");
-		
+		//get user and validate product name is correct
+		Optional<Product> p2 = productRepository.findById(id);
+		assertEquals(p2.get().getName(),"ProductName");
+
 		//update the product
-		p2.get().setProduct("newProduct");
+		p2.get().setName("newProduct");
 		assertNotNull(productRepository.save(p2.get()));
 		
 		// remove the product

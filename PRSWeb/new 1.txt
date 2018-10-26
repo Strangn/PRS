@@ -1,0 +1,29 @@
+verything is modular 
+
+little things you can do is components
+components
+learn node.js
+learn rating stars
+	its an objoec that you can feeed through the object
+	
+	industry wants you to do it modular
+have to be versastile
+
+interconnect. understand it and do it.
+
+ ~~~~ look into MVC ~~~~~
+ type of design pattern for angular
+ 
+ view which is html
+ 
+ model is being fed into view
+ 
+ get node.js
+ do it
+ 
+ learn interfaces
+ 
+ moslty syntax things for mvc
+ 
+ laravel
+ 

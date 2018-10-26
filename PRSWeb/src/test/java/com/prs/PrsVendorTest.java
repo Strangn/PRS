@@ -31,7 +31,7 @@ public class PrsVendorTest extends PrsWebApplicationTests  {
 		assertNotNull(vendorRepository.save(v1));
 		int id = v1.getId();
 
-		//get user and validate vendorname is correct
+		//get user and validate vendor name is correct
 		Optional<Vendor> v2 = vendorRepository.findById(id);
 		assertEquals(v2.get().getVendor(),"VendorName");
 		
