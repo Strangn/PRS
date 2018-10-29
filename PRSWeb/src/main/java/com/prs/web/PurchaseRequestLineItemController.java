@@ -23,7 +23,7 @@ import com.prs.util.JsonResponse;
 public class PurchaseRequestLineItemController {
 	
 	@Autowired
-	private PurchaseRequestLineItemRepository purchaserequestlineitem;
+	private PurchaseRequestLineItemRepository purchaserequestlineitemRepository;
 	
 	@GetMapping("/List")
 	public @ResponseBody JsonResponse getAllPurchaseRequestLineItem() {
@@ -31,16 +31,16 @@ public class PurchaseRequestLineItemController {
 			return JsonResponse.getInstance(purchaserequestlineitemRepository.findAll());
 		}
 		catch (Exception prli) {
-			return JsonResponse.getErrorInstance("PurchaseRequestLineItem list failure:"+e.getMessage(), e);
+			return JsonResponse.getErrorInstance("PurchaseRequestLineItem list failure:"+prli.getMessage(), prli);
 		}
 	}
 	
 	@GetMapping("/Get/{id}")
 	public @ResponseBody JsonResponse getUser(@PathVariable int id) {
 		try {
-			Optional<PurchaseRequestLineItem> user = purchaserequestlineitemRepository.findById(id);
-			if (purchaserequestlineitem.isPresent())
-				return JsonResponse.getInstance(purchaserequestlineitem.get());
+			Optional<PurchaseRequestLineItem> PurchaseRequestLineItem = purchaserequestlineitemRepository.findById(id);
+			if (purchaserequestlineitemRepository.isPresent())
+				return JsonResponse.getInstance(purchaserequestlineitemRepository.get());
 			else
 				return JsonResponse.getErrorInstance("PurchaseRequestLineItem not found for id: "+id, null);
 		}
@@ -49,20 +49,10 @@ public class PurchaseRequestLineItemController {
 		}
 	}
 
-	@PostMapping("/Login")
-	public @ResponseBody JsonResponse authenticate(@RequestBody PurchaseRequestLineItem purchaserequestlineitem) {
-		try {
-			PurchaseRequestLineItem prli = purchaserequestlineitemRepository.findByUserNameAndPassword(purchaserequestlineitem.getUserName(),
-															  purchaserequestlineitem.getPassword());
-			return JsonResponse.getInstance(prli);
-		}
-		catch (Exception e) {
-			return JsonResponse.getErrorInstance("Error getting user:  "+e.getMessage(), null);
-		}
-	}
+	
 
 	@PostMapping("/Add")
-	public @ResponseBody JsonResponse addUser(@RequestBody User user) {
+	public @ResponseBody JsonResponse addUser(@RequestBody PurchaseRequestLineItem purchaserequestlineitem) {
 		return savePurchaseRequestLineItem(purchaserequestlineitem);
 	}
 	@PostMapping("/Change")
