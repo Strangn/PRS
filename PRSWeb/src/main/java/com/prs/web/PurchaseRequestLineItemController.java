@@ -36,11 +36,11 @@ public class PurchaseRequestLineItemController {
 	}
 	
 	@GetMapping("/Get/{id}")
-	public @ResponseBody JsonResponse getUser(@PathVariable int id) {
+	public @ResponseBody JsonResponse getPurchaseRequestLineItem(@PathVariable int id) {
 		try {
 			Optional<PurchaseRequestLineItem> PurchaseRequestLineItem = purchaserequestlineitemRepository.findById(id);
-			if (purchaserequestlineitemRepository.isPresent())
-				return JsonResponse.getInstance(purchaserequestlineitemRepository.get());
+			if (PurchaseRequestLineItem.isPresent())
+				return JsonResponse.getInstance(PurchaseRequestLineItem.get());
 			else
 				return JsonResponse.getErrorInstance("PurchaseRequestLineItem not found for id: "+id, null);
 		}
@@ -52,7 +52,7 @@ public class PurchaseRequestLineItemController {
 	
 
 	@PostMapping("/Add")
-	public @ResponseBody JsonResponse addUser(@RequestBody PurchaseRequestLineItem purchaserequestlineitem) {
+	public @ResponseBody JsonResponse addNewPurchaseRequestLineItem(@RequestBody PurchaseRequestLineItem purchaserequestlineitem) {
 		return savePurchaseRequestLineItem(purchaserequestlineitem);
 	}
 	@PostMapping("/Change")
