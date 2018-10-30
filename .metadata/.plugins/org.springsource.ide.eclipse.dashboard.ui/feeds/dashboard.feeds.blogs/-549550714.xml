@@ -5,7 +5,255 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2018-10-29T16:02:17Z</updated>
+  <updated>2018-10-29T19:56:09Z</updated>
+  <entry>
+    <title>Spring Integrtation 5.1 goes GA!</title>
+    <link rel="alternate" href="https://spring.io/blog/2018/10/29/spring-integrtation-5-1-goes-ga" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2018-10-29:3454</id>
+    <updated>2018-10-29T19:56:09Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of Spring Integration team I am pleased to announce that the &lt;code&gt;5.1.0.RELEASE&lt;/code&gt; for the Spring Integration is available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It can be downloaded from Maven Central, JCenter, and our &lt;a href="https://repo.spring.io/release"&gt;release repository&lt;/a&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.integration:spring-integration-core:5.1.0.RELEASE"&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;First of all I would like to thank all community members for their ongoing active contributions to the framework!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Besides the regular dependencies upgrades, bug fixes and internal performance improvements here are some notable new features introduced in this version:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="boundrabbitchanneladvice"&gt;&lt;a class="anchor" href="#boundrabbitchanneladvice"&gt;&lt;/a&gt;BoundRabbitChannelAdvice&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For strict ordering of messages publishing a &lt;code&gt;BoundRabbitChannelAdvice&lt;/code&gt; can be used as a &lt;code&gt;MessageHandler&lt;/code&gt; advice to allow to perform all the downstream AMQP operations in the same thread-bound &lt;code&gt;Channel&lt;/code&gt;.
+Typically used with a splitter or some other mechanism that would cause multiple messages to be sent:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+public IntegrationFlow flow(RabbitTemplate template) {
+    return IntegrationFlows.from(Gateway.class)
+            .split(s -&amp;gt; s.delimiters(",")
+                    .advice(new BoundRabbitChannelAdvice(template))
+            .&amp;lt;String, String&amp;gt;transform(String::toUpperCase)
+            .handle(Amqp.outboundAdapter(template).routingKey("rk"))
+            .get();
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="reactive-polling"&gt;&lt;a class="anchor" href="#reactive-polling"&gt;&lt;/a&gt;Reactive Polling&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If &lt;code&gt;SourcePollingChannelAdapter&lt;/code&gt; or &lt;code&gt;PollingConsumer&lt;/code&gt; is configured with the &lt;code&gt;outputChannel&lt;/code&gt; as a &lt;code&gt;FluxMessageChannel&lt;/code&gt;, the polling task is not performed by the scheduler, but as a &lt;code&gt;Flux.generate()&lt;/code&gt; with a subsequent &lt;code&gt;Mono.delay()&lt;/code&gt; based on the &lt;code&gt;trigger.nextExecutionTime()&lt;/code&gt;.
+This way the real source polling is performed on demand honoring a downstream back-pressure propagated by the &lt;code&gt;FluxMessageChannel&lt;/code&gt;.
+The &lt;code&gt;PollerMetadata&lt;/code&gt; options remain the same and transparent for end configuration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="java-dsl-code-fluxtransform-code"&gt;&lt;a class="anchor" href="#java-dsl-code-fluxtransform-code"&gt;&lt;/a&gt;Java DSL &lt;code&gt;fluxTransform()&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;code&gt;IntegrationFlowDefinition&lt;/code&gt; is now supplied with new &lt;code&gt;fluxTransform()&lt;/code&gt; operator which accepts a &lt;code&gt;Function&lt;/code&gt; for transforming a &lt;code&gt;Flux&lt;/code&gt; of incoming message via reactive manner.
+Underneath the &lt;code&gt;fluxTransform()&lt;/code&gt; is fully based on the Reactor&amp;#8217;s &lt;code&gt;Flux.transform()&lt;/code&gt; operator and copies request headers to the reply message if function doesn&amp;#8217;t produce one already.
+The call is wrapped with input and output &lt;code&gt;FluxMessageChannel&lt;/code&gt; instances internally:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;IntegrationFlow integrationFlow = f -&amp;gt; f
+        .split()
+        .&amp;lt;String, String&amp;gt;fluxTransform(flux -&amp;gt; flux
+                .map(Message::getPayload)
+                .map(String::toUpperCase))
+        .aggregate(a -&amp;gt; a
+                .outputProcessor(group -&amp;gt; group
+                        .getMessages()
+                        .stream()
+                        .map(Message::getPayload)
+                        .map(String.class::cast)
+                        .collect(Collectors.joining(","))))
+        .channel(resultChannel);&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Also Java DSL provides more operators for convenience: &lt;code&gt;nullChannel()&lt;/code&gt;, &lt;code&gt;convert(Class&amp;lt;?&amp;gt;)&lt;/code&gt; and &lt;code&gt;logAndReply()&lt;/code&gt;.
+See their Javadocs for more information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="java-functions-improvements"&gt;&lt;a class="anchor" href="#java-functions-improvements"&gt;&lt;/a&gt;Java Functions Improvements&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;code&gt;java.util.function&lt;/code&gt; interfaces now serve as a first class citizens for messaging endpoints.
+The &lt;code&gt;Function&amp;lt;?, ?&amp;gt;&lt;/code&gt; and &lt;code&gt;Consumer&amp;lt;?&amp;gt;&lt;/code&gt; can directly be used from the &lt;code&gt;@ServiceActivator&lt;/code&gt; or &lt;code&gt;@Transformer&lt;/code&gt; definition, for example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+@Transformer(inputChannel = "functionServiceChannel")
+public Function&amp;lt;String, String&amp;gt; functionAsService() {
+    return String::toUpperCase;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;code&gt;Supplier&amp;lt;?&amp;gt;&lt;/code&gt; interface can simply be used together with the &lt;code&gt;@InboundChannelAdapter&lt;/code&gt; annotation, or as a &lt;code&gt;ref&lt;/code&gt; in an &lt;code&gt;&amp;lt;int:inbound-channel-adapter&amp;gt;&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+@InboundChannelAdapter(value = "inputChannel", poller = @Poller(fixedDelay = "1000"))
+public Supplier&amp;lt;String&amp;gt; pojoSupplier() {
+    return () -&amp;gt; "foo";
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The  Kotlin lambdas can now also be used directly in the messaging endpoint definitions:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+@Transformer(inputChannel = "functionServiceChannel")
+fun kotlinFunction(): (String) -&amp;gt; String {
+    return { it.toUpperCase() }
+}
+
+@Bean
+@ServiceActivator(inputChannel = "messageConsumerServiceChannel")
+fun kotlinConsumer(): (Message&amp;lt;Any&amp;gt;) -&amp;gt; Unit {
+    return { print(it) }
+}
+
+@Bean
+@InboundChannelAdapter(value = "counterChannel",
+        poller = [Poller(fixedRate = "10", maxMessagesPerPoll = "1")])
+fun kotlinSupplier(): () -&amp;gt; String {
+    return { "baz" }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="micrometer"&gt;&lt;a class="anchor" href="#micrometer"&gt;&lt;/a&gt;Micrometer&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Together with an upgrade to Micrometer &lt;code&gt;1.1&lt;/code&gt; the Framework now automatically removes registered meters from the &lt;code&gt;MeterRegistry&lt;/code&gt;.
+This becomes very handy when we develop dynamic &lt;code&gt;IntegrationFlow&lt;/code&gt; s and register and remove them at runtime.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="jmx-mbeans-removal"&gt;&lt;a class="anchor" href="#jmx-mbeans-removal"&gt;&lt;/a&gt;JMX MBeans removal&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Now MBeans registered at runtime (e.g. via dynamic &lt;code&gt;IntegrationFlow&lt;/code&gt; s) removed from the JMX server registration automatically when beans for them are destroyed at runtime.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="http-dynamic-mapping"&gt;&lt;a class="anchor" href="#http-dynamic-mapping"&gt;&lt;/a&gt;HTTP Dynamic Mapping&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The HTTP (and WebFlux) inbound endpoints, declared at runtime (e.g. via  dynamic &lt;code&gt;IntegrationFlow&lt;/code&gt; s), now register their request mapping in the &lt;code&gt;HandlerMapping&lt;/code&gt; and also remove it automatically, when their bean is destroyed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="spring-social-twitter-support"&gt;&lt;a class="anchor" href="#spring-social-twitter-support"&gt;&lt;/a&gt;Spring Social Twitter Support&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Since Spring Social project is heading to its &lt;a href="https://spring.io/blog/2018/07/03/spring-social-end-of-life-announcement"&gt;End of Life&lt;/a&gt;, we have moved &lt;code&gt;spring-integration-twitter&lt;/code&gt; module to separate project under &lt;a href="https://github.com/spring-projects/spring-integration-extensions"&gt;Spring Integration Extensions&lt;/a&gt; umbrella and have just released a &lt;code&gt;org.springframework.integration:spring-integration-social-twitter:1.0.0.RELEASE&lt;/code&gt; as well, which is fully based on Spring Integration &lt;code&gt;5.1&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="summary"&gt;&lt;a class="anchor" href="#summary"&gt;&lt;/a&gt;Summary&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For more changes, please, take a look into the &lt;a href="https://docs.spring.io/spring-integration/docs/5.1.0.RELEASE/reference/html/whats-new.html"&gt;What&amp;#8217;s New&lt;/a&gt; chapter of the reference manual.
+Also see a &lt;a href="https://github.com/spring-projects/spring-integration/wiki/Spring-Integration-5.0-to-5.1-Migration-Guide"&gt;Migration Guide&lt;/a&gt; for breaking changes in this version and how to cope with them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This version is a foundation for Spring Boot &lt;code&gt;2.1 GA&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;From here we are looking forward to switch the &lt;code&gt;master&lt;/code&gt; to the &lt;code&gt;5.2&lt;/code&gt; version to start working on new features and valuable improvements!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Any feedback, feature ideas, critics, bug reports and questions are welcome via appropriate communication channels:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/INT"&gt;JIRA&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring for Apache Kafka 2.2 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2018/10/29/spring-for-apache-kafka-2-2-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Gary Russell</name>
+    </author>
+    <id>tag:spring.io,2018-10-29:3453</id>
+    <updated>2018-10-29T19:53:15Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;I am pleased to announce that Spring for Apache Kafka 2.2.0.RELEASE is now available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;While the 2.1.x release is compatible with the 2.0.0 &lt;code&gt;kafka-clients&lt;/code&gt; jar, (since 2.1.9), this version requires 2.0.0 (and provides a 2.0.0 embedded broker for testing).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="highlights"&gt;&lt;a class="anchor" href="#highlights"&gt;&lt;/a&gt;Highlights&lt;/h3&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;SeekToCurrentErrorHandler&lt;/code&gt; can now "skip" records that fail repeatedly&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Such "skipped" records can be published to a dead-letter topic (or otherwise disposed of by application code)&lt;/p&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Headers are added with diagnostics about the failure&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;When using transactions, the same functionality can be achieved with the default &lt;code&gt;AfterRollbackProcessor&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can now use the listener container factory to create any arbitrary listener container, not just containers for &lt;code&gt;@KafkaListener&lt;/code&gt; s&lt;/p&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;This allows more convenient use of Spring Boot&amp;#8217;s auto configuration properties for any container&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;@KafkaListener&lt;/code&gt; annotations can now override the container factory&amp;#8217;s &lt;code&gt;concurrency&lt;/code&gt; and &lt;code&gt;autoStartup&lt;/code&gt; properties&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The new &lt;code&gt;ErrorhandlingDeserializer&lt;/code&gt; can catch deserialization exceptions which are then routed to the &lt;code&gt;ErrorHandler&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The embedded kafka broker can now be used with JUnit 5 tests&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For more information see the &lt;a href="https://docs.spring.io/spring-kafka/docs/2.2.0.RELEASE/reference/html/whats-new-part.html#spring-kafka-intro-new"&gt;What&amp;#8217;s New chapter in the documentation&lt;/a&gt; and the &lt;a href="https://github.com/spring-projects/spring-kafka/releases"&gt;change log&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In addition, Spring Integration for Apache Kafka (&lt;code&gt;spring-integration-kafka&lt;/code&gt;) 3.1.0.RELEASE is available; it is based on Spring for Apache Kafka 2.2 and Spring Integration 5.1.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-kafka/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-kafka/docs/2.2.0.RELEASE/reference/html/"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-kafka"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-kafka"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>Spring Data Lovelace SR2 released</title>
     <link rel="alternate" href="https://spring.io/blog/2018/10/29/spring-data-lovelace-sr2-released" />
@@ -1272,40 +1520,5 @@ dependencies {&#xD;
 &lt;p&gt;Spring Boot 2.0.6 includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.0.6.RELEASE"&gt;97 fixes, improvements, and dependency updates&lt;/a&gt; as well as &lt;a href="https://spring.io/blog/2018/10/16/spring-project-vulnerability-reports-published"&gt;a Spring Framework CVE report&lt;/a&gt;. Thanks to all that have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.0.6.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Session Apple SR6 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2018/10/16/spring-session-apple-sr6-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Rob Winch</name>
-    </author>
-    <id>tag:spring.io,2018-10-16:3429</id>
-    <updated>2018-10-16T11:22:44Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I am pleased to announce that Spring Session Apple SR6 is released. The release includes Spring Session 2.0.8.RELEASE  (&lt;a href="https://github.com/spring-projects/spring-session/milestone/43?closed=1"&gt;changelog&lt;/a&gt;).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-session/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-session/docs/2.0.x/reference/htmlsingle/"&gt;Reference&lt;/a&gt;
-| &lt;a href="http://stackoverflow.com/questions/tagged/spring-session"&gt;Help&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Security 5.1.1, 5.0.9, and 4.2.9 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2018/10/16/spring-security-5-1-1-5-0-9-and-4-2-9-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Rob Winch</name>
-    </author>
-    <id>tag:spring.io,2018-10-16:3428</id>
-    <updated>2018-10-16T11:20:33Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I am pleased to announce that Spring Security 5.1.1  (&lt;a href="https://github.com/spring-projects/spring-security/milestone/124?closed=1"&gt;changelog&lt;/a&gt;)
- Spring Security 5.0.9 (&lt;a href="https://github.com/spring-projects/spring-security/milestone/122?closed=1"&gt;changelog&lt;/a&gt;) and 4.2.9 (&lt;a href="https://github.com/spring-projects/spring-security/milestone/123?closed=1"&gt;changelog&lt;/a&gt;) have been released. The releases primarily deliver bug fixes and dependency version updates along with some minor improvements. The releases will be found in the upcoming Spring Boot maintenance releases coming this week.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-security/site/docs/5.1.x/reference/htmlsingle/"&gt;Reference&lt;/a&gt;
-| &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</content>
   </entry>
 </feed>
